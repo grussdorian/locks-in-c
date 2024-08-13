@@ -5,5 +5,12 @@
 ```console
 cd mcs
 make all
-./bin/test_mcs
+make run
+```
+
+## Non-preemptive-scheduler
+```console
+cd non-preemptive-scheduler
+make all
+make run
 ```

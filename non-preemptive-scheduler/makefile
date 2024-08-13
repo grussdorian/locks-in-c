@@ -9,18 +9,18 @@ $(shell mkdir -p $(OBJ_DIR))
 $(shell mkdir -p $(BIN_DIR))
 
 # Object files
-OBJS = $(OBJ_DIR)/mcs_lock.o $(OBJ_DIR)/test_mcs.o
+OBJS = $(OBJ_DIR)/scheduler.o $(OBJ_DIR)/test_scheduler.o
 
-all: test_mcs
+all: test_scheduler
 
-test_mcs: $(OBJS)
-				$(CC) $(CFLAGS) -o $(BIN_DIR)/$@ $^
+test_scheduler: $(OBJS)
+		$(CC) $(CFLAGS) -o $(BIN_DIR)/$@ $^
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
-				$(CC) $(CFLAGS) -c $< -o $@
+		$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-				rm -f $(OBJ_DIR)/*.o $(BIN_DIR)/test_mcs
+		rm -f $(OBJ_DIR)/*.o $(BIN_DIR)/test_scheduler
 
 run:
-				$(BIN_DIR)/test_mcs
+		$(BIN_DIR)/test_scheduler
